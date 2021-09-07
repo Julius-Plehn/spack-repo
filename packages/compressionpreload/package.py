@@ -48,3 +48,7 @@ class Compressionpreload(MesonPackage):
         # FIXME: If not needed delete this function
         args = []
         return args
+
+    def setup_run_environment(self, env):
+        env.prepend_path('LD_PRELOAD',
+                         join_path(self.prefix, 'lib', 'libmpi-preload.so'))
