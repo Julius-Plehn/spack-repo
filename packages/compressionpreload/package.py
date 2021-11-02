@@ -43,6 +43,7 @@ class Compressionpreload(MesonPackage):
     depends_on('lz4')
     depends_on('zstd')
     depends_on('zlib')
+    depends_on('hdf5')
 
     def meson_args(self):
         # FIXME: If not needed delete this function
