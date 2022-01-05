@@ -23,6 +23,5 @@ class Extrap(AutotoolsPackage):
 
     @run_after('install')
     def install_include(self):
-        mkdirp(self.prefix.include)
         install_tree('include', self.prefix.include)
 
