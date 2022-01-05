@@ -21,3 +21,8 @@ class Extrap(AutotoolsPackage):
     depends_on('py-pyqt5')
     depends_on('py-matplotlib')
 
+    @run_after('install')
+    def install_include(self):
+        mkdirp(self.prefix.include)
+        install('include/*', self.prefix.include)
+
